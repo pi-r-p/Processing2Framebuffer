@@ -5,14 +5,13 @@ import java.util.Map;
 
 import io.warp10.warp.sdk.WarpScriptExtension;
 
-public class PleaseRenameWarpScriptExtension extends WarpScriptExtension {
+public class processingToFramebufferExtension extends WarpScriptExtension {
   
   private static final Map<String,Object> functions;
   
   static {
     functions = new HashMap<String,Object>();
-    
-    functions.put("RENAME ME", new fr.couincouin.PleaseRenameFunction("RENAME ME"));
+    functions.put("PtoFrameBuffer", new PtoFramebuffer("PtoFrameBuffer"));
   }
   
   @Override
