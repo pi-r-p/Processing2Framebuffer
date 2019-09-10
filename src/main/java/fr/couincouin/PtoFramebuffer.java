@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 
 public class PtoFramebuffer extends NamedWarpScriptFunction implements WarpScriptStackFunction {
-  
+
   public PtoFramebuffer(String name) {
     super(name);
   }
@@ -21,6 +21,9 @@ public class PtoFramebuffer extends NamedWarpScriptFunction implements WarpScrip
   @Override
   public Object apply(WarpScriptStack stack) throws WarpScriptException {
 
+    if (stack.depth() < 2) {
+      throw new WarpScriptException(getName() + " expects a PGRAPHICS and a STRING on top of the stack.");
+    }
     Object fbpath = stack.pop();
     Object pimage = stack.pop();
 
@@ -28,7 +31,7 @@ public class PtoFramebuffer extends NamedWarpScriptFunction implements WarpScrip
       PGraphics pg = (PGraphics) pimage;
       pg.loadPixels();
       ByteBuffer bytes = ByteBuffer.allocate(pg.width * pg.height * 4); // 4 bytes per pixel
-      for (int pixel : pg.pixels) {
+      for (int pixel: pg.pixels) {
         bytes.put((byte) (pixel & 0xFF)); //blue
         bytes.put((byte) ((pixel & 0xFF00) >> 8)); //green
         bytes.put((byte) ((pixel & 0xFF0000) >> 16)); //red
@@ -43,7 +46,6 @@ public class PtoFramebuffer extends NamedWarpScriptFunction implements WarpScrip
     } else {
       throw new WarpScriptException(getName() + " expects a STRING to specify the frame buffer path on top of the stack.");
     }
-
     return stack;
   }
 }

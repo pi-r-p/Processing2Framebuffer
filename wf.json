@@ -3,12 +3,12 @@
   "group": "fr.couincouin",
   "artifact": "processingToFramebuffer",
   "version": "1.0",
-  "description": "Easy dislay a processing image into the the framebuffer. Usefull for IoT devices with little screens.",
+  "description": "Easy display a processing image into the the framebuffer. Usefull for IoT devices with little screens.",
   "author": "Pierre Papin",
   "email": "pierre@couincouin.fr",
   "license": "WTFPL",
   "git": "https://github.com/pi-r-p/Processing2Framebuffer",
-  "repoUrl": "https://dl.bintray.com/fr-couincouin/ext/",
+  "repoUrl": "https://dl.bintray.com/fr-couincouin/Warp10-extensions",
   "tags": [
     "raspberry",
     "processing"

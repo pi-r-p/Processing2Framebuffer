@@ -51,19 +51,23 @@ def getVersionName(String revision) {
 //
 // bintrayUser = The user to use for uploading to bintay
 // bintrayUserOrg = The organization to use on bintray
-// bintrayApiKey = The bintray API key
+//  = The bintray API key
 //
 
-project.ext.bintrayRepo = '@BINTRAYREPO#'
-project.ext.bintrayVcsUrl = '@VCSURL@'
-project.ext.bintrayLicenses = [ '@LICENSE@' ]
+//project.ext.bintrayRepo = '@BINTRAYREPO#'
+//project.ext.bintrayVcsUrl = '@VCSURL@'
+//project.ext.bintrayLicenses = [ '@LICENSE@' ]
+
+project.ext.bintrayRepo = 'Warp10-extensions'
+project.ext.bintrayVcsUrl = 'https://github.com/pi-r-p/Processing2Framebuffer'
+project.ext.bintrayLicenses = [ 'WTFPL' ]
 
 //
 // GnuPG configuration for signing module
 // @see https://docs.gradle.org/current/userguide/signing_plugin.html
 //
 
-//project.ext.'signing.gnupg.keyName' = 'hhhhhhhh'
+project.ext.'signing.gnupg.keyName' = '6AB58383DCCD31D5CB214A9DD81C1AB57B4DD872'
 
 
 project.ext.group = 'fr.couincouin'
